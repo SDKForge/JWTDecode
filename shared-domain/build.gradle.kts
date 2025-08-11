@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
+    alias(libs.plugins.kotlinSerialization)
     alias(libs.plugins.binaryCompatibilityValidator)
     alias(libs.plugins.dokka)
     alias(libs.plugins.build.logic.library.kmp)
@@ -12,7 +13,8 @@ kotlin {
     sourceSets {
         commonMain {
             dependencies {
-                // put your multiplatform dependencies here
+                implementation(libs.kotlinx.datetime)
+                implementation(libs.kotlinx.serialization.json)
             }
         }
         commonTest {
