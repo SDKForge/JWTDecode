@@ -24,5 +24,5 @@ kotlin {
 }
 
 android {
-    namespace = "dev.sdkforge.template.core"
+    namespace = "dev.sdkforge.jwt.decode.core"
 }
