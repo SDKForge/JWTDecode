@@ -14,7 +14,7 @@ plugins {
 
 kotlin {
     androidLibrary {
-        namespace = "dev.sdkforge.template"
+        namespace = "dev.sdkforge.jwt.decode"
     }
 
     // export dependencies for iOS

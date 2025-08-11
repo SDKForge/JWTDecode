@@ -10,7 +10,7 @@ plugins {
 
 kotlin {
     androidLibrary {
-        namespace = "dev.sdkforge.template.core"
+        namespace = "dev.sdkforge.jwt.decode.core"
     }
 
     sourceSets {
