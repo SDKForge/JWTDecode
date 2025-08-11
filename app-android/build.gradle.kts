@@ -8,10 +8,10 @@ plugins {
 }
 
 android {
-    namespace = "dev.sdkforge.template.android"
+    namespace = "dev.sdkforge.jwt.decode.android"
     compileSdk = 36
     defaultConfig {
-        applicationId = "dev.sdkforge.template.android"
+        applicationId = "dev.sdkforge.jwt.decode.android"
         minSdk = 21
         targetSdk = 36
         versionCode = 1

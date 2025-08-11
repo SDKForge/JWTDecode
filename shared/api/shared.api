@@ -1,5 +1,5 @@
-public final class dev/sdkforge/template/Library {
-	public static final field INSTANCE Ldev/sdkforge/template/Library;
+public final class dev/sdkforge/jwt/decode/Library {
+	public static final field INSTANCE Ldev/sdkforge/jwt/decode/Library;
 	public static final field VERSION Ljava/lang/String;
 	public fun equals (Ljava/lang/Object;)Z
 	public fun hashCode ()I
