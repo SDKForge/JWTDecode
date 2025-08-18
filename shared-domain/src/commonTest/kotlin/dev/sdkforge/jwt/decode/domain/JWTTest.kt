@@ -348,7 +348,7 @@ class JWTTest {
     fun shouldGetBaseClaimIfClaimIsMissing() {
         val jwt = JWT("eyJhbGciOiJIUzI1NiJ9.e30.K17vlwhE8FCMShdl1_65jEYqsQqBOVMPUU9IgG-QlTM")
         assertNotNull(jwt.getClaim("notExisting"))
-        assertTrue { jwt.getClaim("notExisting") is ClaimImpl }
+        assertTrue { jwt.getClaim("notExisting") is JsonClaim }
         assertTrue { jwt.getClaim("notExisting") is BaseClaim }
     }
 
@@ -358,7 +358,7 @@ class JWTTest {
         val jwt = JWT("eyJhbGciOiJIUzI1NiJ9.eyJvYmplY3QiOnsibmFtZSI6ImpvaG4ifX0.lrU1gZlOdlmTTeZwq0VI-pZx2iV46UWYd5-lCjy6-c4")
 
         assertNotNull(jwt.getClaim("object"))
-        assertTrue { jwt.getClaim("object") is ClaimImpl }
+        assertTrue { jwt.getClaim("object") is JsonClaim }
     }
 
     @Ignore
@@ -374,7 +374,7 @@ class JWTTest {
 
         assertNotNull(objectClaim)
 
-        assertTrue { objectClaim is ClaimImpl }
+        assertTrue { objectClaim is JsonClaim }
 
         val extraClaim: Claim = claims["sub"]!!
 

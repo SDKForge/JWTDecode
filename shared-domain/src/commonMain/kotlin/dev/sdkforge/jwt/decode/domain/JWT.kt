@@ -167,7 +167,7 @@ class JWT(private var token: String) {
         string ?: return null
 
         try {
-            return Base64.UrlSafe.withPadding(Base64.PaddingOption.ABSENT).decode(string).decodeToString()
+            return base64Decoder.decode(string).decodeToString()
         } catch (e: IllegalArgumentException) {
             throw DecodeException("Received bytes didn't correspond to a valid Base64 encoded string.", e)
         }
@@ -185,5 +185,6 @@ class JWT(private var token: String) {
 
     companion object {
         private val TAG: String? = JWT::class.simpleName
+        private val base64Decoder = Base64.UrlSafe.withPadding(Base64.PaddingOption.ABSENT)
     }
 }

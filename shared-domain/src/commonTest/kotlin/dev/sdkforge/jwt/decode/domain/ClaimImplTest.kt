@@ -21,7 +21,7 @@ class ClaimImplTest {
     @Test
     fun shouldGetBooleanValue() {
         val value: JsonElement = json.encodeToJsonElement(true)
-        val claim = ClaimImpl(value)
+        val claim = JsonClaim(value)
 
         assertNotNull(claim.asBoolean())
         assertEquals(true, claim.asBoolean())
@@ -30,7 +30,7 @@ class ClaimImplTest {
     @Test
     fun shouldGetNullBooleanIfNotPrimitiveValue() {
         val value: JsonElement = json.encodeToJsonElement(Unit)
-        val claim = ClaimImpl(value)
+        val claim = JsonClaim(value)
 
         assertNull(claim.asBoolean())
     }
@@ -38,7 +38,7 @@ class ClaimImplTest {
     @Test
     fun shouldGetIntValue() {
         val value: JsonElement = json.encodeToJsonElement(123)
-        val claim = ClaimImpl(value)
+        val claim = JsonClaim(value)
 
         assertNotNull(claim.asInt())
         assertEquals(123, claim.asInt())
@@ -47,7 +47,7 @@ class ClaimImplTest {
     @Test
     fun shouldGetLongValue() {
         val value: JsonElement = json.encodeToJsonElement(123L)
-        val claim = ClaimImpl(value)
+        val claim = JsonClaim(value)
 
         assertNotNull(claim.asLong())
         assertEquals(123L, claim.asLong())
@@ -56,7 +56,7 @@ class ClaimImplTest {
     @Test
     fun shouldGetNullIntIfNotPrimitiveValue() {
         val value: JsonElement = json.encodeToJsonElement(Unit)
-        val claim = ClaimImpl(value)
+        val claim = JsonClaim(value)
 
         assertNull(claim.asInt())
     }
@@ -64,7 +64,7 @@ class ClaimImplTest {
     @Test
     fun shouldGetNullLongIfNotPrimitiveValue() {
         val value: JsonElement = json.encodeToJsonElement(Unit)
-        val claim = ClaimImpl(value)
+        val claim = JsonClaim(value)
 
         assertNull(claim.asLong())
     }
@@ -72,7 +72,7 @@ class ClaimImplTest {
     @Test
     fun shouldGetDoubleValue() {
         val value: JsonElement = json.encodeToJsonElement(1.5)
-        val claim = ClaimImpl(value)
+        val claim = JsonClaim(value)
 
         assertNotNull(claim.asDouble())
         assertEquals(1.5, claim.asDouble())
@@ -81,7 +81,7 @@ class ClaimImplTest {
     @Test
     fun shouldGetNullDoubleIfNotPrimitiveValue() {
         val value: JsonElement = json.encodeToJsonElement(Unit)
-        val claim = ClaimImpl(value)
+        val claim = JsonClaim(value)
 
         assertNull(claim.asDouble())
     }
@@ -90,7 +90,7 @@ class ClaimImplTest {
     fun shouldGetLargeDateValue() {
         val seconds: Long = Int.MAX_VALUE + 10000L
         val value: JsonElement = json.encodeToJsonElement(seconds)
-        val claim = ClaimImpl(value)
+        val claim = JsonClaim(value)
 
         val date: Instant? = claim.asDate()
         assertNotNull(date)
@@ -101,7 +101,7 @@ class ClaimImplTest {
     @Test
     fun shouldGetDateValue() {
         val value: JsonElement = json.encodeToJsonElement("1476824844")
-        val claim = ClaimImpl(value)
+        val claim = JsonClaim(value)
 
         assertNotNull(claim.asDate())
         assertEquals(Instant.fromEpochSeconds(1476824844), claim.asDate())
@@ -110,7 +110,7 @@ class ClaimImplTest {
     @Test
     fun shouldGetNullDateIfNotPrimitiveValue() {
         val value: JsonElement = json.encodeToJsonElement(Unit)
-        val claim = ClaimImpl(value)
+        val claim = JsonClaim(value)
 
         assertNull(claim.asDate())
     }
@@ -118,7 +118,7 @@ class ClaimImplTest {
     @Test
     fun shouldGetStringValue() {
         val value: JsonElement = json.encodeToJsonElement("string")
-        val claim = ClaimImpl(value)
+        val claim = JsonClaim(value)
 
         assertNotNull(claim.asString())
         assertEquals("string", claim.asString())
@@ -127,7 +127,7 @@ class ClaimImplTest {
     @Test
     fun shouldGetNullStringIfNotPrimitiveValue() {
         val value: JsonElement = json.encodeToJsonElement(Unit)
-        val claim = ClaimImpl(value)
+        val claim = JsonClaim(value)
 
         assertNull(claim.asString())
     }
@@ -135,7 +135,7 @@ class ClaimImplTest {
     @Test
     fun shouldGetListValueOfCustomClass() {
         val value: JsonElement = json.encodeToJsonElement(listOf(UserPojo("George", 1), UserPojo("Mark", 2)))
-        val claim = ClaimImpl(value)
+        val claim = JsonClaim(value)
 
         assertNotNull(claim.asList<UserPojo>(UserPojo.serializer()))
         assertContentEquals(
@@ -147,7 +147,7 @@ class ClaimImplTest {
     @Test
     fun shouldGetListValue() {
         val value: JsonElement = json.encodeToJsonElement(listOf("string1", "string2"))
-        val claim = ClaimImpl(value)
+        val claim = JsonClaim(value)
 
         assertNotNull(claim.asList<String>(String.serializer()))
         assertContentEquals(
@@ -159,7 +159,7 @@ class ClaimImplTest {
     @Test
     fun shouldGetEmptyListIfNullValue() {
         val value: JsonElement = json.encodeToJsonElement(null.orEmpty())
-        val claim = ClaimImpl(value)
+        val claim = JsonClaim(value)
 
         assertNotNull(claim.asList<String>(String.serializer()))
         assertContentEquals(
@@ -171,7 +171,7 @@ class ClaimImplTest {
     @Test
     fun shouldGetEmptyListIfNonArrayValue() {
         val value: JsonElement = json.encodeToJsonElement(1)
-        val claim = ClaimImpl(value)
+        val claim = JsonClaim(value)
 
         assertNotNull(claim.asList<String>(String.serializer()))
         assertContentEquals(
@@ -183,7 +183,7 @@ class ClaimImplTest {
     @Test
     fun shouldThrowIfListClassMismatch() {
         val value: JsonElement = json.encodeToJsonElement(arrayOf<String>("keys", "values"))
-        val claim = ClaimImpl(value)
+        val claim = JsonClaim(value)
 
         assertFailsWith<DecodeException> {
             claim.asList<UserPojo>(UserPojo.serializer())
@@ -194,13 +194,13 @@ class ClaimImplTest {
     fun shouldGetAsObject() {
         val data = UserPojo("George", 1)
         val userValue: JsonElement = json.encodeToJsonElement(data)
-        val userClaim = ClaimImpl(userValue)
+        val userClaim = JsonClaim(userValue)
 
         val intValue: JsonElement = json.encodeToJsonElement(1)
-        val intClaim = ClaimImpl(intValue)
+        val intClaim = JsonClaim(intValue)
 
         val booleanValue: JsonElement = json.encodeToJsonElement(true)
-        val booleanClaim = ClaimImpl(booleanValue)
+        val booleanClaim = JsonClaim(booleanValue)
 
         assertNotNull(userClaim.asObject<UserPojo>(UserPojo.serializer()))
         assertEquals(UserPojo("George", 1), userClaim.asObject<UserPojo>(UserPojo.serializer()))
@@ -214,7 +214,7 @@ class ClaimImplTest {
 
     @Test
     fun shouldGetNullObjectIfNullValue() {
-        val claim = ClaimImpl(JsonNull)
+        val claim = JsonClaim(JsonNull)
 
         assertNull(claim.asObject<UserPojo>(UserPojo.serializer()))
     }
@@ -222,7 +222,7 @@ class ClaimImplTest {
     @Test
     fun shouldThrowIfObjectClassMismatch() {
         val value: JsonElement = json.encodeToJsonElement(1)
-        val claim = ClaimImpl(value)
+        val claim = JsonClaim(value)
 
         assertFailsWith<DecodeException> {
             claim.asObject<UserPojo>(UserPojo.serializer())
