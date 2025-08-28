@@ -41,15 +41,15 @@ internal class JWTPayload(
 object InstantAsStringSerializer : KSerializer<Instant> {
     // Serial names of descriptors should be unique, this is why we advise including app package in the name.
     override val descriptor: SerialDescriptor
-        get() = PrimitiveSerialDescriptor("dev.sdkforge.jwt.decode.domain.Instant", PrimitiveKind.STRING)
+        get() = PrimitiveSerialDescriptor("dev.sdkforge.jwt.decode.domain.Instant", PrimitiveKind.LONG)
 
     override fun serialize(encoder: Encoder, value: Instant) {
-        encoder.encodeString(value.epochSeconds.toString())
+        encoder.encodeLong(value.epochSeconds)
     }
 
     override fun deserialize(decoder: Decoder): Instant {
-        val seconds = decoder.decodeString()
-        return Instant.fromEpochSeconds(seconds.toLong())
+        val seconds = decoder.decodeLong()
+        return Instant.fromEpochSeconds(seconds)
     }
 }
 

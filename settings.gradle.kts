@@ -44,4 +44,4 @@ include(":shared-domain")
 include(":internal-ktlint")
 // uncomment if it's needed for development
 // include(":shared-template")
-// include(":internal-benchmark")
+include(":internal-benchmark")
