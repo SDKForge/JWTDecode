@@ -20,7 +20,7 @@ import kotlinx.serialization.json.longOrNull
  * The ClaimImpl class implements the Claim interface.
  */
 @OptIn(ExperimentalTime::class)
-internal class ClaimImpl(private val value: JsonElement) : BaseClaim() {
+internal class JsonClaim(private val value: JsonElement) : BaseClaim() {
 
     override fun asBoolean(): Boolean? = when (value) {
         !is JsonPrimitive -> null

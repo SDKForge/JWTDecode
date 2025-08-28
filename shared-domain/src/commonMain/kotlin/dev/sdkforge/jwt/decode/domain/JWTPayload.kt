@@ -62,7 +62,7 @@ object ClaimAsStringSerializer : KSerializer<Claim> {
     }
 
     override fun deserialize(decoder: Decoder): Claim {
-        return ClaimImpl(Json.parseToJsonElement(decoder.decodeString()))
+        return JsonClaim(Json.parseToJsonElement(decoder.decodeString()))
     }
 }
 
