@@ -1,6 +1,6 @@
 package dev.sdkforge.jwt.decode
 
-import dev.sdkforge.template.Library.VERSION
+import dev.sdkforge.jwt.decode.Library.VERSION
 
 /**
  * Library metadata and version information.
