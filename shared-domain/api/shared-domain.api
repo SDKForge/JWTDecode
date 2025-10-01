@@ -95,20 +95,14 @@ public abstract interface class dev/sdkforge/jwt/decode/domain/Verification {
 	public abstract fun withClaim (Ljava/lang/String;J)Ldev/sdkforge/jwt/decode/domain/Verification;
 	public abstract fun withClaim (Ljava/lang/String;Ljava/lang/String;)Ldev/sdkforge/jwt/decode/domain/Verification;
 	public abstract fun withClaim (Ljava/lang/String;Lkotlin/jvm/functions/Function2;)Ldev/sdkforge/jwt/decode/domain/Verification;
-	public fun withClaim (Ljava/lang/String;Lkotlin/time/Instant;)Ldev/sdkforge/jwt/decode/domain/Verification;
+	public abstract fun withClaim (Ljava/lang/String;Lkotlin/time/Instant;)Ldev/sdkforge/jwt/decode/domain/Verification;
 	public abstract fun withClaim (Ljava/lang/String;Lkotlinx/datetime/LocalDate;)Ldev/sdkforge/jwt/decode/domain/Verification;
 	public abstract fun withClaim (Ljava/lang/String;Z)Ldev/sdkforge/jwt/decode/domain/Verification;
 	public abstract fun withClaimPresence (Ljava/lang/String;)Ldev/sdkforge/jwt/decode/domain/Verification;
-	public fun withIssuer (Ljava/lang/String;)Ldev/sdkforge/jwt/decode/domain/Verification;
 	public abstract fun withIssuer ([Ljava/lang/String;)Ldev/sdkforge/jwt/decode/domain/Verification;
 	public abstract fun withJWTId (Ljava/lang/String;)Ldev/sdkforge/jwt/decode/domain/Verification;
 	public abstract fun withNullClaim (Ljava/lang/String;)Ldev/sdkforge/jwt/decode/domain/Verification;
 	public abstract fun withSubject (Ljava/lang/String;)Ldev/sdkforge/jwt/decode/domain/Verification;
-}
-
-public final class dev/sdkforge/jwt/decode/domain/Verification$DefaultImpls {
-	public static fun withClaim (Ldev/sdkforge/jwt/decode/domain/Verification;Ljava/lang/String;Lkotlin/time/Instant;)Ldev/sdkforge/jwt/decode/domain/Verification;
-	public static fun withIssuer (Ldev/sdkforge/jwt/decode/domain/Verification;Ljava/lang/String;)Ldev/sdkforge/jwt/decode/domain/Verification;
 }
 
 public abstract class dev/sdkforge/jwt/decode/domain/algorithm/Algorithm {

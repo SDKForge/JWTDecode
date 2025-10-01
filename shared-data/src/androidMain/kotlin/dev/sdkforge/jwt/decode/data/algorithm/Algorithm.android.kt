@@ -1,4 +1,4 @@
-@file:Suppress("FunctionName", "ktlint:standard:function-expression-body", "ktlint:standard:function-signature")
+@file:Suppress("FunctionName")
 
 package dev.sdkforge.jwt.decode.data.algorithm
 
@@ -23,9 +23,15 @@ import java.security.interfaces.RSAPublicKey
  * @throws IllegalArgumentException if both provided Keys are null.
  */
 @Throws(IllegalArgumentException::class)
-fun Algorithm.Companion.RSA256(publicKey: RSAPublicKey?, privateKey: RSAPrivateKey?): Algorithm {
-    return RSA256(keyProvider = RSAAlgorithm.providerForKeys(publicKey?.asNativeRSAPublicKey, privateKey?.asNativeRSAPrivateKey))
-}
+fun Algorithm.Companion.RSA256(
+    publicKey: RSAPublicKey?,
+    privateKey: RSAPrivateKey?,
+): Algorithm = RSA256(
+    keyProvider = RSAAlgorithm.providerForKeys(
+        publicKey = publicKey?.asNativeRSAPublicKey,
+        privateKey = privateKey?.asNativeRSAPrivateKey,
+    ),
+)
 
 /**
  * Creates a new Algorithm instance using SHA256withRSA. Tokens specify this as "RS256".
@@ -35,11 +41,12 @@ fun Algorithm.Companion.RSA256(publicKey: RSAPublicKey?, privateKey: RSAPrivateK
  * @throws IllegalArgumentException if the Key Provider is null.
  */
 @Throws(IllegalArgumentException::class)
-fun Algorithm.Companion.RSA256(key: RSAKey): Algorithm {
-    val publicKey: RSAPublicKey? = key as? RSAPublicKey
-    val privateKey: RSAPrivateKey? = key as? RSAPrivateKey
-    return RSA256(publicKey = publicKey, privateKey = privateKey)
-}
+fun Algorithm.Companion.RSA256(
+    key: RSAKey,
+): Algorithm = RSA256(
+    publicKey = key as? RSAPublicKey,
+    privateKey = key as? RSAPrivateKey,
+)
 
 /**
  * Creates a new Algorithm instance using SHA384withRSA. Tokens specify this as "RS384".
@@ -50,9 +57,15 @@ fun Algorithm.Companion.RSA256(key: RSAKey): Algorithm {
  * @throws IllegalArgumentException if both provided Keys are null.
  */
 @Throws(IllegalArgumentException::class)
-fun Algorithm.Companion.RSA384(publicKey: RSAPublicKey?, privateKey: RSAPrivateKey?): Algorithm {
-    return RSA384(keyProvider = RSAAlgorithm.providerForKeys(publicKey?.asNativeRSAPublicKey, privateKey?.asNativeRSAPrivateKey))
-}
+fun Algorithm.Companion.RSA384(
+    publicKey: RSAPublicKey?,
+    privateKey: RSAPrivateKey?,
+): Algorithm = RSA384(
+    keyProvider = RSAAlgorithm.providerForKeys(
+        publicKey = publicKey?.asNativeRSAPublicKey,
+        privateKey = privateKey?.asNativeRSAPrivateKey,
+    ),
+)
 
 /**
  * Creates a new Algorithm instance using SHA384withRSA. Tokens specify this as "RS384".
@@ -62,11 +75,12 @@ fun Algorithm.Companion.RSA384(publicKey: RSAPublicKey?, privateKey: RSAPrivateK
  * @throws IllegalArgumentException if the provided Key is null.
  */
 @Throws(IllegalArgumentException::class)
-fun Algorithm.Companion.RSA384(key: RSAKey): Algorithm {
-    val publicKey: RSAPublicKey? = key as? RSAPublicKey
-    val privateKey: RSAPrivateKey? = key as? RSAPrivateKey
-    return RSA384(publicKey = publicKey, privateKey = privateKey)
-}
+fun Algorithm.Companion.RSA384(
+    key: RSAKey,
+): Algorithm = RSA384(
+    publicKey = key as? RSAPublicKey,
+    privateKey = key as? RSAPrivateKey,
+)
 
 /**
  * Creates a new Algorithm instance using SHA512withRSA. Tokens specify this as "RS512".
@@ -77,9 +91,15 @@ fun Algorithm.Companion.RSA384(key: RSAKey): Algorithm {
  * @throws IllegalArgumentException if both provided Keys are null.
  */
 @Throws(IllegalArgumentException::class)
-fun Algorithm.Companion.RSA512(publicKey: RSAPublicKey?, privateKey: RSAPrivateKey?): Algorithm {
-    return RSA512(keyProvider = RSAAlgorithm.providerForKeys(publicKey?.asNativeRSAPublicKey, privateKey?.asNativeRSAPrivateKey))
-}
+fun Algorithm.Companion.RSA512(
+    publicKey: RSAPublicKey?,
+    privateKey: RSAPrivateKey?,
+): Algorithm = RSA512(
+    keyProvider = RSAAlgorithm.providerForKeys(
+        publicKey = publicKey?.asNativeRSAPublicKey,
+        privateKey = privateKey?.asNativeRSAPrivateKey,
+    ),
+)
 
 /**
  * Creates a new Algorithm instance using SHA512withRSA. Tokens specify this as "RS512".
@@ -89,11 +109,12 @@ fun Algorithm.Companion.RSA512(publicKey: RSAPublicKey?, privateKey: RSAPrivateK
  * @throws IllegalArgumentException if the provided Key is null.
  */
 @Throws(IllegalArgumentException::class)
-fun Algorithm.Companion.RSA512(key: RSAKey?): Algorithm {
-    val publicKey: RSAPublicKey? = key as? RSAPublicKey
-    val privateKey: RSAPrivateKey? = key as? RSAPrivateKey
-    return RSA512(publicKey = publicKey, privateKey = privateKey)
-}
+fun Algorithm.Companion.RSA512(
+    key: RSAKey?,
+): Algorithm = RSA512(
+    publicKey = key as? RSAPublicKey,
+    privateKey = key as? RSAPrivateKey,
+)
 
 /**
  * Creates a new Algorithm instance using SHA256withECDSA. Tokens specify this as "ES256".
@@ -104,9 +125,15 @@ fun Algorithm.Companion.RSA512(key: RSAKey?): Algorithm {
  * @throws IllegalArgumentException if the provided Key is null.
  */
 @Throws(IllegalArgumentException::class)
-fun Algorithm.Companion.ECDSA256(publicKey: ECPublicKey?, privateKey: ECPrivateKey?): Algorithm {
-    return ECDSA256(keyProvider = ECDSAAlgorithm.providerForKeys(publicKey?.asNativeECPublicKey, privateKey?.asNativeECPrivateKey))
-}
+fun Algorithm.Companion.ECDSA256(
+    publicKey: ECPublicKey?,
+    privateKey: ECPrivateKey?,
+): Algorithm = ECDSA256(
+    keyProvider = ECDSAAlgorithm.providerForKeys(
+        publicKey = publicKey?.asNativeECPublicKey,
+        privateKey = privateKey?.asNativeECPrivateKey,
+    ),
+)
 
 /**
  * Creates a new Algorithm instance using SHA256withECDSA. Tokens specify this as "ES256".
@@ -116,11 +143,12 @@ fun Algorithm.Companion.ECDSA256(publicKey: ECPublicKey?, privateKey: ECPrivateK
  * @throws IllegalArgumentException if the provided Key is null.
  */
 @Throws(IllegalArgumentException::class)
-fun Algorithm.Companion.ECDSA256(key: ECKey): Algorithm {
-    val publicKey: ECPublicKey? = key as? ECPublicKey
-    val privateKey: ECPrivateKey? = key as? ECPrivateKey
-    return ECDSA256(publicKey = publicKey, privateKey = privateKey)
-}
+fun Algorithm.Companion.ECDSA256(
+    key: ECKey,
+): Algorithm = ECDSA256(
+    publicKey = key as? ECPublicKey,
+    privateKey = key as? ECPrivateKey,
+)
 
 /**
  * Creates a new Algorithm instance using SHA384withECDSA. Tokens specify this as "ES384".
@@ -131,9 +159,15 @@ fun Algorithm.Companion.ECDSA256(key: ECKey): Algorithm {
  * @throws IllegalArgumentException if the provided Key is null.
  */
 @Throws(IllegalArgumentException::class)
-fun Algorithm.Companion.ECDSA384(publicKey: ECPublicKey?, privateKey: ECPrivateKey?): Algorithm {
-    return ECDSA384(keyProvider = ECDSAAlgorithm.providerForKeys(publicKey?.asNativeECPublicKey, privateKey?.asNativeECPrivateKey))
-}
+fun Algorithm.Companion.ECDSA384(
+    publicKey: ECPublicKey?,
+    privateKey: ECPrivateKey?,
+): Algorithm = ECDSA384(
+    keyProvider = ECDSAAlgorithm.providerForKeys(
+        publicKey = publicKey?.asNativeECPublicKey,
+        privateKey = privateKey?.asNativeECPrivateKey,
+    ),
+)
 
 /**
  * Creates a new Algorithm instance using SHA384withECDSA. Tokens specify this as "ES384".
@@ -143,11 +177,12 @@ fun Algorithm.Companion.ECDSA384(publicKey: ECPublicKey?, privateKey: ECPrivateK
  * @throws IllegalArgumentException if the provided Key is null.
  */
 @Throws(IllegalArgumentException::class)
-fun Algorithm.Companion.ECDSA384(key: ECKey?): Algorithm {
-    val publicKey: ECPublicKey? = key as? ECPublicKey
-    val privateKey: ECPrivateKey? = key as? ECPrivateKey
-    return ECDSA384(publicKey = publicKey, privateKey = privateKey)
-}
+fun Algorithm.Companion.ECDSA384(
+    key: ECKey?,
+): Algorithm = ECDSA384(
+    publicKey = key as? ECPublicKey,
+    privateKey = key as? ECPrivateKey,
+)
 
 /**
  * Creates a new Algorithm instance using SHA512withECDSA. Tokens specify this as "ES512".
@@ -158,9 +193,15 @@ fun Algorithm.Companion.ECDSA384(key: ECKey?): Algorithm {
  * @throws IllegalArgumentException if the provided Key is null.
  */
 @Throws(IllegalArgumentException::class)
-fun Algorithm.Companion.ECDSA512(publicKey: ECPublicKey?, privateKey: ECPrivateKey?): Algorithm {
-    return ECDSA512(keyProvider = ECDSAAlgorithm.providerForKeys(publicKey?.asNativeECPublicKey, privateKey?.asNativeECPrivateKey))
-}
+fun Algorithm.Companion.ECDSA512(
+    publicKey: ECPublicKey?,
+    privateKey: ECPrivateKey?,
+): Algorithm = ECDSA512(
+    keyProvider = ECDSAAlgorithm.providerForKeys(
+        publicKey = publicKey?.asNativeECPublicKey,
+        privateKey = privateKey?.asNativeECPrivateKey,
+    ),
+)
 
 /**
  * Creates a new Algorithm instance using SHA512withECDSA. Tokens specify this as "ES512".
@@ -170,8 +211,9 @@ fun Algorithm.Companion.ECDSA512(publicKey: ECPublicKey?, privateKey: ECPrivateK
  * @throws IllegalArgumentException if the provided Key is null.
  */
 @Throws(IllegalArgumentException::class)
-fun Algorithm.Companion.ECDSA512(key: ECKey): Algorithm {
-    val publicKey: ECPublicKey? = key as? ECPublicKey
-    val privateKey: ECPrivateKey? = key as? ECPrivateKey
-    return ECDSA512(publicKey = publicKey, privateKey = privateKey)
-}
+fun Algorithm.Companion.ECDSA512(
+    key: ECKey,
+): Algorithm = ECDSA512(
+    publicKey = key as? ECPublicKey,
+    privateKey = key as? ECPrivateKey,
+)

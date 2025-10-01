@@ -5,24 +5,12 @@ package dev.sdkforge.jwt.decode.domain
 import kotlin.time.ExperimentalTime
 import kotlin.time.Instant
 import kotlinx.datetime.LocalDate
-import kotlinx.datetime.TimeZone
-import kotlinx.datetime.toLocalDateTime
 
 /**
  * Constructs and holds the checks required for a JWT to be considered valid.
  */
 @OptIn(ExperimentalTime::class)
 interface Verification {
-    /**
-     * Verifies whether the JWT contains an Issuer ("iss") claim that equals to the value provided.
-     * This check is case-sensitive.
-     *
-     * @param issuer the required Issuer value.
-     * @return this same Verification instance.
-     */
-    fun withIssuer(issuer: String): Verification {
-        return withIssuer(*arrayOf(issuer))
-    }
 
     /**
      * Verifies whether the JWT contains an Issuer ("iss") claim that contains all the values provided.
@@ -219,9 +207,7 @@ interface Verification {
      * @throws IllegalArgumentException if the name is `null`.
      */
     @Throws(IllegalArgumentException::class)
-    fun withClaim(name: String, value: Instant): Verification {
-        return withClaim(name, value.toLocalDateTime(TimeZone.UTC).date)
-    }
+    fun withClaim(name: String, value: Instant): Verification
 
     /**
      * Executes the predicate provided and the validates the JWT if the predicate returns true.
