@@ -1,3 +1,5 @@
+dev.sdkforge.crypto:crypto-domain-android:0.0.2-SNAPSHOT
+dev.sdkforge.crypto:crypto-domain:0.0.2-SNAPSHOT
 org.jetbrains.kotlin:kotlin-stdlib:2.2.20
 org.jetbrains.kotlinx:kotlinx-datetime-jvm:0.7.1
 org.jetbrains.kotlinx:kotlinx-datetime:0.7.1

@@ -1,0 +1,53 @@
+public final class dev/sdkforge/jwt/decode/data/JWT {
+	public static final field INSTANCE Ldev/sdkforge/jwt/decode/data/JWT;
+	public final fun decode (Ljava/lang/String;Ldev/sdkforge/jwt/decode/domain/JWTParser;)Ldev/sdkforge/jwt/decode/domain/DecodedJWT;
+	public static synthetic fun decode$default (Ldev/sdkforge/jwt/decode/data/JWT;Ljava/lang/String;Ldev/sdkforge/jwt/decode/domain/JWTParser;ILjava/lang/Object;)Ldev/sdkforge/jwt/decode/domain/DecodedJWT;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun hashCode ()I
+	public final fun require (Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm;)Ldev/sdkforge/jwt/decode/domain/Verification;
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class dev/sdkforge/jwt/decode/data/algorithm/AlgorithmKt {
+	public static final fun ECDSA256 (Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm$Companion;Ldev/sdkforge/crypto/domain/ec/ECKey;)Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm;
+	public static final fun ECDSA256 (Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm$Companion;Ldev/sdkforge/crypto/domain/ec/ECPublicKey;Ldev/sdkforge/crypto/domain/ec/ECPrivateKey;)Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm;
+	public static final fun ECDSA256 (Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm$Companion;Ldev/sdkforge/jwt/decode/domain/provider/ECDSAKeyProvider;)Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm;
+	public static final fun ECDSA384 (Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm$Companion;Ldev/sdkforge/crypto/domain/ec/ECKey;)Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm;
+	public static final fun ECDSA384 (Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm$Companion;Ldev/sdkforge/crypto/domain/ec/ECPublicKey;Ldev/sdkforge/crypto/domain/ec/ECPrivateKey;)Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm;
+	public static final fun ECDSA384 (Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm$Companion;Ldev/sdkforge/jwt/decode/domain/provider/ECDSAKeyProvider;)Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm;
+	public static final fun ECDSA512 (Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm$Companion;Ldev/sdkforge/crypto/domain/ec/ECKey;)Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm;
+	public static final fun ECDSA512 (Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm$Companion;Ldev/sdkforge/crypto/domain/ec/ECPublicKey;Ldev/sdkforge/crypto/domain/ec/ECPrivateKey;)Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm;
+	public static final fun ECDSA512 (Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm$Companion;Ldev/sdkforge/jwt/decode/domain/provider/ECDSAKeyProvider;)Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm;
+	public static final fun HMAC256 (Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm$Companion;Ljava/lang/String;)Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm;
+	public static final fun HMAC256 (Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm$Companion;[B)Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm;
+	public static final fun HMAC384 (Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm$Companion;Ljava/lang/String;)Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm;
+	public static final fun HMAC384 (Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm$Companion;[B)Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm;
+	public static final fun HMAC512 (Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm$Companion;Ljava/lang/String;)Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm;
+	public static final fun HMAC512 (Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm$Companion;[B)Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm;
+	public static final fun RSA256 (Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm$Companion;Ldev/sdkforge/crypto/domain/rsa/RSAKey;)Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm;
+	public static final fun RSA256 (Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm$Companion;Ldev/sdkforge/crypto/domain/rsa/RSAPublicKey;Ldev/sdkforge/crypto/domain/rsa/RSAPrivateKey;)Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm;
+	public static final fun RSA256 (Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm$Companion;Ldev/sdkforge/jwt/decode/domain/provider/RSAKeyProvider;)Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm;
+	public static final fun RSA384 (Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm$Companion;Ldev/sdkforge/crypto/domain/rsa/RSAKey;)Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm;
+	public static final fun RSA384 (Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm$Companion;Ldev/sdkforge/crypto/domain/rsa/RSAPublicKey;Ldev/sdkforge/crypto/domain/rsa/RSAPrivateKey;)Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm;
+	public static final fun RSA384 (Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm$Companion;Ldev/sdkforge/jwt/decode/domain/provider/RSAKeyProvider;)Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm;
+	public static final fun RSA512 (Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm$Companion;Ldev/sdkforge/crypto/domain/rsa/RSAKey;)Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm;
+	public static final fun RSA512 (Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm$Companion;Ldev/sdkforge/crypto/domain/rsa/RSAPublicKey;Ldev/sdkforge/crypto/domain/rsa/RSAPrivateKey;)Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm;
+	public static final fun RSA512 (Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm$Companion;Ldev/sdkforge/jwt/decode/domain/provider/RSAKeyProvider;)Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm;
+	public static final fun getNONE (Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm$Companion;)Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm;
+}
+
+public final class dev/sdkforge/jwt/decode/data/algorithm/Algorithm_androidKt {
+	public static final fun ECDSA256 (Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm$Companion;Ljava/security/interfaces/ECKey;)Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm;
+	public static final fun ECDSA256 (Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm$Companion;Ljava/security/interfaces/ECPublicKey;Ljava/security/interfaces/ECPrivateKey;)Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm;
+	public static final fun ECDSA384 (Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm$Companion;Ljava/security/interfaces/ECKey;)Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm;
+	public static final fun ECDSA384 (Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm$Companion;Ljava/security/interfaces/ECPublicKey;Ljava/security/interfaces/ECPrivateKey;)Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm;
+	public static final fun ECDSA512 (Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm$Companion;Ljava/security/interfaces/ECKey;)Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm;
+	public static final fun ECDSA512 (Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm$Companion;Ljava/security/interfaces/ECPublicKey;Ljava/security/interfaces/ECPrivateKey;)Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm;
+	public static final fun RSA256 (Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm$Companion;Ljava/security/interfaces/RSAKey;)Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm;
+	public static final fun RSA256 (Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm$Companion;Ljava/security/interfaces/RSAPublicKey;Ljava/security/interfaces/RSAPrivateKey;)Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm;
+	public static final fun RSA384 (Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm$Companion;Ljava/security/interfaces/RSAKey;)Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm;
+	public static final fun RSA384 (Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm$Companion;Ljava/security/interfaces/RSAPublicKey;Ljava/security/interfaces/RSAPrivateKey;)Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm;
+	public static final fun RSA512 (Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm$Companion;Ljava/security/interfaces/RSAKey;)Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm;
+	public static final fun RSA512 (Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm$Companion;Ljava/security/interfaces/RSAPublicKey;Ljava/security/interfaces/RSAPrivateKey;)Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm;
+}
+
