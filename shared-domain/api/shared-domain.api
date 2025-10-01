@@ -1,76 +1,187 @@
-public final class dev/sdkforge/jwt/decode/domain/AudienceAsStringSerializer : kotlinx/serialization/KSerializer {
-	public static final field INSTANCE Ldev/sdkforge/jwt/decode/domain/AudienceAsStringSerializer;
-	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
-	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/util/List;
-	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
-	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
-	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/util/List;)V
-}
-
 public abstract interface class dev/sdkforge/jwt/decode/domain/Claim {
 	public static final field Companion Ldev/sdkforge/jwt/decode/domain/Claim$Companion;
 	public abstract fun asBoolean ()Ljava/lang/Boolean;
-	public abstract fun asDate ()Lkotlin/time/Instant;
 	public abstract fun asDouble ()Ljava/lang/Double;
+	public abstract fun asInstant ()Lkotlin/time/Instant;
 	public abstract fun asInt ()Ljava/lang/Integer;
 	public abstract fun asList (Lkotlinx/serialization/DeserializationStrategy;)Ljava/util/List;
 	public abstract fun asLong ()Ljava/lang/Long;
 	public abstract fun asObject (Lkotlinx/serialization/DeserializationStrategy;)Ljava/lang/Object;
 	public abstract fun asString ()Ljava/lang/String;
+	public abstract fun isMissing ()Z
+	public abstract fun isNull ()Z
 }
 
 public final class dev/sdkforge/jwt/decode/domain/Claim$Companion {
-	public final fun serializer ()Lkotlinx/serialization/KSerializer;
 }
 
-public final class dev/sdkforge/jwt/decode/domain/ClaimAsMapSerializer : kotlinx/serialization/KSerializer {
-	public static final field INSTANCE Ldev/sdkforge/jwt/decode/domain/ClaimAsMapSerializer;
-	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
-	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/util/Map;
-	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
-	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
-	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/util/Map;)V
+public final class dev/sdkforge/jwt/decode/domain/Claim$Companion$Registered {
+	public static final field AUDIENCE Ljava/lang/String;
+	public static final field EXPIRES_AT Ljava/lang/String;
+	public static final field INSTANCE Ldev/sdkforge/jwt/decode/domain/Claim$Companion$Registered;
+	public static final field ISSUED_AT Ljava/lang/String;
+	public static final field ISSUER Ljava/lang/String;
+	public static final field JWT_ID Ljava/lang/String;
+	public static final field NOT_BEFORE Ljava/lang/String;
+	public static final field SUBJECT Ljava/lang/String;
 }
 
-public final class dev/sdkforge/jwt/decode/domain/ClaimAsStringSerializer : kotlinx/serialization/KSerializer {
-	public static final field INSTANCE Ldev/sdkforge/jwt/decode/domain/ClaimAsStringSerializer;
-	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ldev/sdkforge/jwt/decode/domain/Claim;
-	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
-	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
-	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Ldev/sdkforge/jwt/decode/domain/Claim;)V
-	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+public abstract interface class dev/sdkforge/jwt/decode/domain/DecodedJWT : dev/sdkforge/jwt/decode/domain/Header, dev/sdkforge/jwt/decode/domain/Payload {
+	public abstract fun getHeader ()Ljava/lang/String;
+	public abstract fun getPayload ()Ljava/lang/String;
+	public abstract fun getSignature ()Ljava/lang/String;
+	public abstract fun getToken ()Ljava/lang/String;
 }
 
-public final class dev/sdkforge/jwt/decode/domain/DecodeException : java/lang/RuntimeException {
+public final class dev/sdkforge/jwt/decode/domain/DecodedJWTKt {
+	public static final fun isExpired-HG0u8IE (Ldev/sdkforge/jwt/decode/domain/DecodedJWT;J)Z
 }
 
-public final class dev/sdkforge/jwt/decode/domain/InstantAsStringSerializer : kotlinx/serialization/KSerializer {
-	public static final field INSTANCE Ldev/sdkforge/jwt/decode/domain/InstantAsStringSerializer;
-	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
-	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lkotlin/time/Instant;
-	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
-	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
-	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Lkotlin/time/Instant;)V
+public abstract interface class dev/sdkforge/jwt/decode/domain/Header {
+	public static final field Companion Ldev/sdkforge/jwt/decode/domain/Header$Companion;
+	public abstract fun getAlgorithm ()Ljava/lang/String;
+	public abstract fun getContentType ()Ljava/lang/String;
+	public abstract fun getHeaderClaim (Ljava/lang/String;)Ldev/sdkforge/jwt/decode/domain/Claim;
+	public abstract fun getKeyId ()Ljava/lang/String;
+	public abstract fun getType ()Ljava/lang/String;
 }
 
-public final class dev/sdkforge/jwt/decode/domain/JWT {
-	public static final field Companion Ldev/sdkforge/jwt/decode/domain/JWT$Companion;
-	public fun <init> (Ljava/lang/String;)V
-	public final fun getAudience ()Ljava/util/List;
-	public final fun getClaim (Ljava/lang/String;)Ldev/sdkforge/jwt/decode/domain/Claim;
-	public final fun getClaims ()Ljava/util/Map;
-	public final fun getExpiresAt ()Lkotlin/time/Instant;
-	public final fun getHeader ()Ljava/util/Map;
-	public final fun getId ()Ljava/lang/String;
-	public final fun getIssuedAt ()Lkotlin/time/Instant;
-	public final fun getIssuer ()Ljava/lang/String;
-	public final fun getNotBefore ()Lkotlin/time/Instant;
-	public final fun getSignature ()Ljava/lang/String;
-	public final fun getSubject ()Ljava/lang/String;
-	public final fun isExpired-LRDsOJo (J)Z
+public final class dev/sdkforge/jwt/decode/domain/Header$Companion {
+}
+
+public final class dev/sdkforge/jwt/decode/domain/Header$Companion$Params {
+	public static final field ALGORITHM Ljava/lang/String;
+	public static final field CONTENT_TYPE Ljava/lang/String;
+	public static final field INSTANCE Ldev/sdkforge/jwt/decode/domain/Header$Companion$Params;
+	public static final field KEY_ID Ljava/lang/String;
+	public static final field TYPE Ljava/lang/String;
+}
+
+public abstract interface class dev/sdkforge/jwt/decode/domain/JWTParser {
+	public abstract fun parseHeader (Ljava/lang/String;)Ldev/sdkforge/jwt/decode/domain/Header;
+	public abstract fun parsePayload (Ljava/lang/String;)Ldev/sdkforge/jwt/decode/domain/Payload;
+}
+
+public abstract interface class dev/sdkforge/jwt/decode/domain/JWTVerifier {
+	public abstract fun verify (Ldev/sdkforge/jwt/decode/domain/DecodedJWT;)Ldev/sdkforge/jwt/decode/domain/DecodedJWT;
+	public abstract fun verify (Ljava/lang/String;)Ldev/sdkforge/jwt/decode/domain/DecodedJWT;
+}
+
+public abstract interface class dev/sdkforge/jwt/decode/domain/Payload {
+	public abstract fun getAudience ()Ljava/util/List;
+	public abstract fun getClaim (Ljava/lang/String;)Ldev/sdkforge/jwt/decode/domain/Claim;
+	public abstract fun getExpiresAt ()Lkotlin/time/Instant;
+	public abstract fun getId ()Ljava/lang/String;
+	public abstract fun getIssuedAt ()Lkotlin/time/Instant;
+	public abstract fun getIssuer ()Ljava/lang/String;
+	public abstract fun getNotBefore ()Lkotlin/time/Instant;
+	public abstract fun getSubject ()Ljava/lang/String;
+}
+
+public abstract interface class dev/sdkforge/jwt/decode/domain/Verification {
+	public abstract fun acceptExpiresAt (J)Ldev/sdkforge/jwt/decode/domain/Verification;
+	public abstract fun acceptIssuedAt (J)Ldev/sdkforge/jwt/decode/domain/Verification;
+	public abstract fun acceptLeeway (J)Ldev/sdkforge/jwt/decode/domain/Verification;
+	public abstract fun acceptNotBefore (J)Ldev/sdkforge/jwt/decode/domain/Verification;
+	public abstract fun build ()Ldev/sdkforge/jwt/decode/domain/JWTVerifier;
+	public abstract fun ignoreIssuedAt ()Ldev/sdkforge/jwt/decode/domain/Verification;
+	public abstract fun withAnyOfAudience ([Ljava/lang/String;)Ldev/sdkforge/jwt/decode/domain/Verification;
+	public abstract fun withArrayClaim (Ljava/lang/String;[I)Ldev/sdkforge/jwt/decode/domain/Verification;
+	public abstract fun withArrayClaim (Ljava/lang/String;[J)Ldev/sdkforge/jwt/decode/domain/Verification;
+	public abstract fun withArrayClaim (Ljava/lang/String;[Ljava/lang/String;)Ldev/sdkforge/jwt/decode/domain/Verification;
+	public abstract fun withAudience ([Ljava/lang/String;)Ldev/sdkforge/jwt/decode/domain/Verification;
+	public abstract fun withClaim (Ljava/lang/String;D)Ldev/sdkforge/jwt/decode/domain/Verification;
+	public abstract fun withClaim (Ljava/lang/String;I)Ldev/sdkforge/jwt/decode/domain/Verification;
+	public abstract fun withClaim (Ljava/lang/String;J)Ldev/sdkforge/jwt/decode/domain/Verification;
+	public abstract fun withClaim (Ljava/lang/String;Ljava/lang/String;)Ldev/sdkforge/jwt/decode/domain/Verification;
+	public abstract fun withClaim (Ljava/lang/String;Lkotlin/jvm/functions/Function2;)Ldev/sdkforge/jwt/decode/domain/Verification;
+	public fun withClaim (Ljava/lang/String;Lkotlin/time/Instant;)Ldev/sdkforge/jwt/decode/domain/Verification;
+	public abstract fun withClaim (Ljava/lang/String;Lkotlinx/datetime/LocalDate;)Ldev/sdkforge/jwt/decode/domain/Verification;
+	public abstract fun withClaim (Ljava/lang/String;Z)Ldev/sdkforge/jwt/decode/domain/Verification;
+	public abstract fun withClaimPresence (Ljava/lang/String;)Ldev/sdkforge/jwt/decode/domain/Verification;
+	public fun withIssuer (Ljava/lang/String;)Ldev/sdkforge/jwt/decode/domain/Verification;
+	public abstract fun withIssuer ([Ljava/lang/String;)Ldev/sdkforge/jwt/decode/domain/Verification;
+	public abstract fun withJWTId (Ljava/lang/String;)Ldev/sdkforge/jwt/decode/domain/Verification;
+	public abstract fun withNullClaim (Ljava/lang/String;)Ldev/sdkforge/jwt/decode/domain/Verification;
+	public abstract fun withSubject (Ljava/lang/String;)Ldev/sdkforge/jwt/decode/domain/Verification;
+}
+
+public final class dev/sdkforge/jwt/decode/domain/Verification$DefaultImpls {
+	public static fun withClaim (Ldev/sdkforge/jwt/decode/domain/Verification;Ljava/lang/String;Lkotlin/time/Instant;)Ldev/sdkforge/jwt/decode/domain/Verification;
+	public static fun withIssuer (Ldev/sdkforge/jwt/decode/domain/Verification;Ljava/lang/String;)Ldev/sdkforge/jwt/decode/domain/Verification;
+}
+
+public abstract class dev/sdkforge/jwt/decode/domain/algorithm/Algorithm {
+	public static final field Companion Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm$Companion;
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;)V
+	public final fun getDescription ()Ljava/lang/String;
+	public final fun getName ()Ljava/lang/String;
 	public fun toString ()Ljava/lang/String;
 }
 
-public final class dev/sdkforge/jwt/decode/domain/JWT$Companion {
+public final class dev/sdkforge/jwt/decode/domain/algorithm/Algorithm$Companion {
+}
+
+public final class dev/sdkforge/jwt/decode/domain/exception/AlgorithmMismatchException : dev/sdkforge/jwt/decode/domain/exception/JWTVerificationException {
+	public fun <init> (Ljava/lang/String;)V
+}
+
+public final class dev/sdkforge/jwt/decode/domain/exception/IncorrectClaimException : dev/sdkforge/jwt/decode/domain/exception/InvalidClaimException {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ldev/sdkforge/jwt/decode/domain/Claim;)V
+	public final fun getClaim ()Ldev/sdkforge/jwt/decode/domain/Claim;
+	public final fun getClaimName ()Ljava/lang/String;
+}
+
+public class dev/sdkforge/jwt/decode/domain/exception/InvalidClaimException : dev/sdkforge/jwt/decode/domain/exception/JWTVerificationException {
+}
+
+public class dev/sdkforge/jwt/decode/domain/exception/JWTCreationException : java/lang/RuntimeException {
+	public fun <init> (Ljava/lang/String;Ljava/lang/Throwable;)V
+}
+
+public final class dev/sdkforge/jwt/decode/domain/exception/JWTDecodeException : dev/sdkforge/jwt/decode/domain/exception/JWTVerificationException {
+	public fun <init> (Ljava/lang/String;)V
+	public fun <init> (Ljava/lang/String;Ljava/lang/Throwable;)V
+}
+
+public class dev/sdkforge/jwt/decode/domain/exception/JWTVerificationException : java/lang/RuntimeException {
+	public fun <init> (Ljava/lang/String;)V
+}
+
+public final class dev/sdkforge/jwt/decode/domain/exception/MissingClaimException : dev/sdkforge/jwt/decode/domain/exception/InvalidClaimException {
+	public fun <init> (Ljava/lang/String;)V
+	public final fun getClaimName ()Ljava/lang/String;
+}
+
+public final class dev/sdkforge/jwt/decode/domain/exception/SignatureException : dev/sdkforge/jwt/decode/domain/exception/JWTVerificationException {
+	public fun <init> (Ljava/lang/String;)V
+	public synthetic fun <init> (Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun <init> (Ljava/lang/String;Ljava/lang/Throwable;)V
+}
+
+public final class dev/sdkforge/jwt/decode/domain/exception/SignatureGenerationException : dev/sdkforge/jwt/decode/domain/exception/JWTCreationException {
+	public fun <init> (Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm;Ljava/lang/Throwable;)V
+}
+
+public final class dev/sdkforge/jwt/decode/domain/exception/SignatureVerificationException : dev/sdkforge/jwt/decode/domain/exception/JWTVerificationException {
+	public fun <init> (Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm;)V
+	public fun <init> (Ldev/sdkforge/jwt/decode/domain/algorithm/Algorithm;Ljava/lang/Throwable;)V
+}
+
+public final class dev/sdkforge/jwt/decode/domain/exception/TokenExpiredException : dev/sdkforge/jwt/decode/domain/exception/JWTVerificationException {
+	public fun <init> (Ljava/lang/String;Lkotlin/time/Instant;)V
+	public final fun getExpiredOn ()Lkotlin/time/Instant;
+}
+
+public abstract interface class dev/sdkforge/jwt/decode/domain/provider/ECDSAKeyProvider : dev/sdkforge/jwt/decode/domain/provider/KeyProvider {
+}
+
+public abstract interface class dev/sdkforge/jwt/decode/domain/provider/KeyProvider {
+	public abstract fun getPrivateKey ()Ldev/sdkforge/crypto/domain/PrivateKey;
+	public abstract fun getPrivateKeyId ()Ljava/lang/String;
+	public abstract fun getPublicKeyById (Ljava/lang/String;)Ldev/sdkforge/crypto/domain/PublicKey;
+}
+
+public abstract interface class dev/sdkforge/jwt/decode/domain/provider/RSAKeyProvider : dev/sdkforge/jwt/decode/domain/provider/KeyProvider {
 }
 
