@@ -12,6 +12,9 @@ import kotlinx.serialization.json.Json
 
 /**
  * Wrapper class for values contained inside a Json Web Token (JWT).
+ *
+ * @param token the string JWT token.
+ * @throws DecodeException if the token cannot be decoded
  */
 @OptIn(ExperimentalTime::class)
 class JWT(private var token: String) {
@@ -20,12 +23,6 @@ class JWT(private var token: String) {
 
     private var payload: JWTPayload? = null
 
-    /**
-     * Decode a given string JWT token.
-     *
-     * @param token the string JWT token.
-     * @throws DecodeException if the token cannot be decoded
-     */
     init {
         decode(token)
 

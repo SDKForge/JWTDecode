@@ -49,9 +49,7 @@ internal class ClaimImpl(private val value: JsonElement) : BaseClaim() {
 
     override fun asDate(): Instant? = when (value) {
         !is JsonPrimitive -> null
-        else -> value.jsonPrimitive.longOrNull?.run {
-            Instant.fromEpochSeconds(this)
-        }
+        else -> value.jsonPrimitive.longOrNull?.run { Instant.fromEpochSeconds(this) }
     }
 
     @Throws(DecodeException::class)
