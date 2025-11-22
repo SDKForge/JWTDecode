@@ -50,6 +50,7 @@ include(":app-shared")
 include(":shared")
 include(":shared-core")
 include(":shared-domain")
+include(":shared-data")
 
 include(":internal-ktlint")
 // uncomment if it's needed for development

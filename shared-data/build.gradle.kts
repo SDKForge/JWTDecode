@@ -13,7 +13,7 @@ kotlin {
     sourceSets {
         commonMain {
             dependencies {
-                implementation("dev.sdkforge.crypto:crypto-domain:0.0.2-SNAPSHOT")
+                implementation(project(":shared-domain"))
 
                 implementation(libs.kotlinx.datetime)
                 implementation(libs.kotlinx.serialization.json)
@@ -24,9 +24,22 @@ kotlin {
                 implementation(libs.kotlin.test)
             }
         }
+        androidMain {
+            dependencies {
+                implementation("dev.sdkforge.crypto:crypto-domain-android:0.0.2-SNAPSHOT")
+            }
+        }
+        androidUnitTest {
+            dependencies {
+                implementation("org.bouncycastle:bcprov-jdk18on:1.82")
+                implementation("io.mockk:mockk:1.14.5")
+                implementation("net.jodah:concurrentunit:0.4.6")
+                implementation("org.hamcrest:hamcrest:3.0")
+            }
+        }
     }
 }
 
 android {
-    namespace = "dev.sdkforge.jwt.decode.domain"
+    namespace = "dev.sdkforge.jwt.decode.data"
 }
