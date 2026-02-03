@@ -1,0 +1,89 @@
+// Klib ABI Dump
+// Targets: [iosArm64, iosSimulatorArm64, iosX64]
+// Rendering settings:
+// - Signature version: 2
+// - Show manifest properties: true
+// - Show declarations: true
+
+// Library unique name: <dev.sdkforge.jwt.decode:shared-domain>
+abstract interface dev.sdkforge.jwt.decode.domain/Claim { // dev.sdkforge.jwt.decode.domain/Claim|null[0]
+    abstract fun <#A1: kotlin/Any?> asList(kotlinx.serialization/DeserializationStrategy<#A1>): kotlin.collections/List<#A1> // dev.sdkforge.jwt.decode.domain/Claim.asList|asList(kotlinx.serialization.DeserializationStrategy<0:0>){0§<kotlin.Any?>}[0]
+    abstract fun <#A1: kotlin/Any?> asObject(kotlinx.serialization/DeserializationStrategy<#A1>): #A1? // dev.sdkforge.jwt.decode.domain/Claim.asObject|asObject(kotlinx.serialization.DeserializationStrategy<0:0>){0§<kotlin.Any?>}[0]
+    abstract fun asBoolean(): kotlin/Boolean? // dev.sdkforge.jwt.decode.domain/Claim.asBoolean|asBoolean(){}[0]
+    abstract fun asDate(): kotlin.time/Instant? // dev.sdkforge.jwt.decode.domain/Claim.asDate|asDate(){}[0]
+    abstract fun asDouble(): kotlin/Double? // dev.sdkforge.jwt.decode.domain/Claim.asDouble|asDouble(){}[0]
+    abstract fun asInt(): kotlin/Int? // dev.sdkforge.jwt.decode.domain/Claim.asInt|asInt(){}[0]
+    abstract fun asLong(): kotlin/Long? // dev.sdkforge.jwt.decode.domain/Claim.asLong|asLong(){}[0]
+    abstract fun asString(): kotlin/String? // dev.sdkforge.jwt.decode.domain/Claim.asString|asString(){}[0]
+
+    final object Companion : kotlinx.serialization.internal/SerializerFactory { // dev.sdkforge.jwt.decode.domain/Claim.Companion|null[0]
+        final fun serializer(): kotlinx.serialization/KSerializer<dev.sdkforge.jwt.decode.domain/Claim> // dev.sdkforge.jwt.decode.domain/Claim.Companion.serializer|serializer(){}[0]
+        final fun serializer(kotlin/Array<out kotlinx.serialization/KSerializer<*>>...): kotlinx.serialization/KSerializer<*> // dev.sdkforge.jwt.decode.domain/Claim.Companion.serializer|serializer(kotlin.Array<out|kotlinx.serialization.KSerializer<*>>...){}[0]
+    }
+}
+
+final class dev.sdkforge.jwt.decode.domain/DecodeException : kotlin/RuntimeException // dev.sdkforge.jwt.decode.domain/DecodeException|null[0]
+
+final class dev.sdkforge.jwt.decode.domain/JWT { // dev.sdkforge.jwt.decode.domain/JWT|null[0]
+    constructor <init>(kotlin/String) // dev.sdkforge.jwt.decode.domain/JWT.<init>|<init>(kotlin.String){}[0]
+
+    final val audience // dev.sdkforge.jwt.decode.domain/JWT.audience|{}audience[0]
+        final fun <get-audience>(): kotlin.collections/List<kotlin/String?> // dev.sdkforge.jwt.decode.domain/JWT.audience.<get-audience>|<get-audience>(){}[0]
+    final val claims // dev.sdkforge.jwt.decode.domain/JWT.claims|{}claims[0]
+        final fun <get-claims>(): kotlin.collections/Map<kotlin/String, dev.sdkforge.jwt.decode.domain/Claim>? // dev.sdkforge.jwt.decode.domain/JWT.claims.<get-claims>|<get-claims>(){}[0]
+    final val expiresAt // dev.sdkforge.jwt.decode.domain/JWT.expiresAt|{}expiresAt[0]
+        final fun <get-expiresAt>(): kotlin.time/Instant? // dev.sdkforge.jwt.decode.domain/JWT.expiresAt.<get-expiresAt>|<get-expiresAt>(){}[0]
+    final val id // dev.sdkforge.jwt.decode.domain/JWT.id|{}id[0]
+        final fun <get-id>(): kotlin/String? // dev.sdkforge.jwt.decode.domain/JWT.id.<get-id>|<get-id>(){}[0]
+    final val issuedAt // dev.sdkforge.jwt.decode.domain/JWT.issuedAt|{}issuedAt[0]
+        final fun <get-issuedAt>(): kotlin.time/Instant? // dev.sdkforge.jwt.decode.domain/JWT.issuedAt.<get-issuedAt>|<get-issuedAt>(){}[0]
+    final val issuer // dev.sdkforge.jwt.decode.domain/JWT.issuer|{}issuer[0]
+        final fun <get-issuer>(): kotlin/String? // dev.sdkforge.jwt.decode.domain/JWT.issuer.<get-issuer>|<get-issuer>(){}[0]
+    final val notBefore // dev.sdkforge.jwt.decode.domain/JWT.notBefore|{}notBefore[0]
+        final fun <get-notBefore>(): kotlin.time/Instant? // dev.sdkforge.jwt.decode.domain/JWT.notBefore.<get-notBefore>|<get-notBefore>(){}[0]
+    final val subject // dev.sdkforge.jwt.decode.domain/JWT.subject|{}subject[0]
+        final fun <get-subject>(): kotlin/String? // dev.sdkforge.jwt.decode.domain/JWT.subject.<get-subject>|<get-subject>(){}[0]
+
+    final var header // dev.sdkforge.jwt.decode.domain/JWT.header|{}header[0]
+        final fun <get-header>(): kotlin.collections/Map<kotlin/String?, kotlin/String?>? // dev.sdkforge.jwt.decode.domain/JWT.header.<get-header>|<get-header>(){}[0]
+    final var signature // dev.sdkforge.jwt.decode.domain/JWT.signature|{}signature[0]
+        final fun <get-signature>(): kotlin/String? // dev.sdkforge.jwt.decode.domain/JWT.signature.<get-signature>|<get-signature>(){}[0]
+
+    final fun getClaim(kotlin/String): dev.sdkforge.jwt.decode.domain/Claim // dev.sdkforge.jwt.decode.domain/JWT.getClaim|getClaim(kotlin.String){}[0]
+    final fun isExpired(kotlin.time/Duration): kotlin/Boolean // dev.sdkforge.jwt.decode.domain/JWT.isExpired|isExpired(kotlin.time.Duration){}[0]
+    final fun toString(): kotlin/String // dev.sdkforge.jwt.decode.domain/JWT.toString|toString(){}[0]
+
+    final object Companion // dev.sdkforge.jwt.decode.domain/JWT.Companion|null[0]
+}
+
+final object dev.sdkforge.jwt.decode.domain/AudienceAsStringSerializer : kotlinx.serialization/KSerializer<kotlin.collections/List<kotlin/String>> { // dev.sdkforge.jwt.decode.domain/AudienceAsStringSerializer|null[0]
+    final val descriptor // dev.sdkforge.jwt.decode.domain/AudienceAsStringSerializer.descriptor|{}descriptor[0]
+        final fun <get-descriptor>(): kotlinx.serialization.descriptors/SerialDescriptor // dev.sdkforge.jwt.decode.domain/AudienceAsStringSerializer.descriptor.<get-descriptor>|<get-descriptor>(){}[0]
+
+    final fun deserialize(kotlinx.serialization.encoding/Decoder): kotlin.collections/List<kotlin/String> // dev.sdkforge.jwt.decode.domain/AudienceAsStringSerializer.deserialize|deserialize(kotlinx.serialization.encoding.Decoder){}[0]
+    final fun serialize(kotlinx.serialization.encoding/Encoder, kotlin.collections/List<kotlin/String>) // dev.sdkforge.jwt.decode.domain/AudienceAsStringSerializer.serialize|serialize(kotlinx.serialization.encoding.Encoder;kotlin.collections.List<kotlin.String>){}[0]
+}
+
+final object dev.sdkforge.jwt.decode.domain/ClaimAsMapSerializer : kotlinx.serialization/KSerializer<kotlin.collections/Map<kotlin/String, dev.sdkforge.jwt.decode.domain/Claim>> { // dev.sdkforge.jwt.decode.domain/ClaimAsMapSerializer|null[0]
+    final val descriptor // dev.sdkforge.jwt.decode.domain/ClaimAsMapSerializer.descriptor|{}descriptor[0]
+        final fun <get-descriptor>(): kotlinx.serialization.descriptors/SerialDescriptor // dev.sdkforge.jwt.decode.domain/ClaimAsMapSerializer.descriptor.<get-descriptor>|<get-descriptor>(){}[0]
+
+    final fun deserialize(kotlinx.serialization.encoding/Decoder): kotlin.collections/Map<kotlin/String, dev.sdkforge.jwt.decode.domain/Claim> // dev.sdkforge.jwt.decode.domain/ClaimAsMapSerializer.deserialize|deserialize(kotlinx.serialization.encoding.Decoder){}[0]
+    final fun serialize(kotlinx.serialization.encoding/Encoder, kotlin.collections/Map<kotlin/String, dev.sdkforge.jwt.decode.domain/Claim>) // dev.sdkforge.jwt.decode.domain/ClaimAsMapSerializer.serialize|serialize(kotlinx.serialization.encoding.Encoder;kotlin.collections.Map<kotlin.String,dev.sdkforge.jwt.decode.domain.Claim>){}[0]
+}
+
+final object dev.sdkforge.jwt.decode.domain/ClaimAsStringSerializer : kotlinx.serialization/KSerializer<dev.sdkforge.jwt.decode.domain/Claim> { // dev.sdkforge.jwt.decode.domain/ClaimAsStringSerializer|null[0]
+    final val descriptor // dev.sdkforge.jwt.decode.domain/ClaimAsStringSerializer.descriptor|{}descriptor[0]
+        final fun <get-descriptor>(): kotlinx.serialization.descriptors/SerialDescriptor // dev.sdkforge.jwt.decode.domain/ClaimAsStringSerializer.descriptor.<get-descriptor>|<get-descriptor>(){}[0]
+
+    final fun deserialize(kotlinx.serialization.encoding/Decoder): dev.sdkforge.jwt.decode.domain/Claim // dev.sdkforge.jwt.decode.domain/ClaimAsStringSerializer.deserialize|deserialize(kotlinx.serialization.encoding.Decoder){}[0]
+    final fun serialize(kotlinx.serialization.encoding/Encoder, dev.sdkforge.jwt.decode.domain/Claim) // dev.sdkforge.jwt.decode.domain/ClaimAsStringSerializer.serialize|serialize(kotlinx.serialization.encoding.Encoder;dev.sdkforge.jwt.decode.domain.Claim){}[0]
+}
+
+final object dev.sdkforge.jwt.decode.domain/InstantAsStringSerializer : kotlinx.serialization/KSerializer<kotlin.time/Instant> { // dev.sdkforge.jwt.decode.domain/InstantAsStringSerializer|null[0]
+    final val descriptor // dev.sdkforge.jwt.decode.domain/InstantAsStringSerializer.descriptor|{}descriptor[0]
+        final fun <get-descriptor>(): kotlinx.serialization.descriptors/SerialDescriptor // dev.sdkforge.jwt.decode.domain/InstantAsStringSerializer.descriptor.<get-descriptor>|<get-descriptor>(){}[0]
+
+    final fun deserialize(kotlinx.serialization.encoding/Decoder): kotlin.time/Instant // dev.sdkforge.jwt.decode.domain/InstantAsStringSerializer.deserialize|deserialize(kotlinx.serialization.encoding.Decoder){}[0]
+    final fun serialize(kotlinx.serialization.encoding/Encoder, kotlin.time/Instant) // dev.sdkforge.jwt.decode.domain/InstantAsStringSerializer.serialize|serialize(kotlinx.serialization.encoding.Encoder;kotlin.time.Instant){}[0]
+}

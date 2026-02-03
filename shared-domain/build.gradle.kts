@@ -7,6 +7,7 @@ plugins {
     alias(libs.plugins.build.logic.library.kmp)
     alias(libs.plugins.build.logic.library.android)
     alias(libs.plugins.build.logic.library.publishing)
+    alias(libs.plugins.build.logic.binary.validation)
 }
 
 kotlin {

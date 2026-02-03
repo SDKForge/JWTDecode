@@ -5,12 +5,12 @@
 // - Show manifest properties: true
 // - Show declarations: true
 
-// Library unique name: <dev.sdkforge.template:shared>
-final object dev.sdkforge.template/Library { // dev.sdkforge.template/Library|null[0]
-    final const val VERSION // dev.sdkforge.template/Library.VERSION|{}VERSION[0]
-        final fun <get-VERSION>(): kotlin/String // dev.sdkforge.template/Library.VERSION.<get-VERSION>|<get-VERSION>(){}[0]
+// Library unique name: <dev.sdkforge.jwt.decode:shared>
+final object dev.sdkforge.jwt.decode/Library { // dev.sdkforge.jwt.decode/Library|null[0]
+    final const val VERSION // dev.sdkforge.jwt.decode/Library.VERSION|{}VERSION[0]
+        final fun <get-VERSION>(): kotlin/String // dev.sdkforge.jwt.decode/Library.VERSION.<get-VERSION>|<get-VERSION>(){}[0]
 
-    final fun equals(kotlin/Any?): kotlin/Boolean // dev.sdkforge.template/Library.equals|equals(kotlin.Any?){}[0]
-    final fun hashCode(): kotlin/Int // dev.sdkforge.template/Library.hashCode|hashCode(){}[0]
-    final fun toString(): kotlin/String // dev.sdkforge.template/Library.toString|toString(){}[0]
+    final fun equals(kotlin/Any?): kotlin/Boolean // dev.sdkforge.jwt.decode/Library.equals|equals(kotlin.Any?){}[0]
+    final fun hashCode(): kotlin/Int // dev.sdkforge.jwt.decode/Library.hashCode|hashCode(){}[0]
+    final fun toString(): kotlin/String // dev.sdkforge.jwt.decode/Library.toString|toString(){}[0]
 }
